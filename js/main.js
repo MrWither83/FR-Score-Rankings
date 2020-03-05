@@ -4,6 +4,7 @@ let data;
 function loadData() {
     Papa.parse(dataUrl, {
         download: true,
+        header: true,
         complete: function(results) {
             data = results;
         }
