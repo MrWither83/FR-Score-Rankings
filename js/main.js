@@ -22,7 +22,7 @@ function getPlayerData(name) {
 }
 
 function getPlayerCurrentRank(playerData) {
-    let rank = playerData[playerData.length() - 1]["Rank"]
+    let rank = playerData[playerData.length - 1]["Rank"]
     return rank;
 }
 
