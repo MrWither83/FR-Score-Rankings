@@ -26,4 +26,24 @@ function getPlayerCurrentRank(playerData) {
     return rank;
 }
 
+function getAllUpdateDates() {
+    let dates = []
+    rankingData.data.forEach(row => {
+        rowDate = row["Date"];
+        if (dates.indexOf(rowDate) == -1) {
+            dates.push(rowDate);
+        }
+    });
+    return dates;
+}
+
+function getTotalScore(date) {
+    totalScore = 0;
+    rankingData.data.forEach(row => {
+        if (row["Date"] == date) {
+            totalScore += row["Score"];
+        }
+    });
+}
+
 loadData();
