@@ -7,6 +7,7 @@ function loadData() {
         header: true,
         complete: function(results) {
             rankingData = results;
+            init();
         }
     });
 }
@@ -47,4 +48,9 @@ function getTotalScore(date) {
         }
     });
     return totalScore;
+}
+
+function init() {
+    console.log(rankingData);
+    loadTotalScoreChart();
 }
