@@ -13,7 +13,7 @@ function loadTotalScoreChart() {
         data: {
             labels: updateDates,
             datasets: [{
-                label: 'Total Score',
+                label: 'Score Total en Milliards',
                 backgroundColor: 'rgba(144, 230, 137, 1)',
                 borderColor: 'rgba(144, 230, 137, 1)',
                 data: totalScoreList,
