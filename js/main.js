@@ -40,10 +40,11 @@ function getAllUpdateDates() {
 }
 
 function getTotalScore(date) {
-    totalScore = 0;
+    let totalScore = 0;
     rankingData.data.forEach(row => {
         if (row["Date"] == date) {
             totalScore += row["Score"];
         }
     });
+    return totalScore;
 }
