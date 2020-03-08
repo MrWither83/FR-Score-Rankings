@@ -11,6 +11,8 @@ function loadData() {
     });
 }
 
+loadData();
+
 function getPlayerData(name) {
     let playerData = [];
     rankingData.data.forEach(player => {
@@ -45,5 +47,3 @@ function getTotalScore(date) {
         }
     });
 }
-
-loadData();
