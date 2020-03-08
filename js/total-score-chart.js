@@ -24,7 +24,7 @@ function loadTotalScoreChart() {
             responsive: true,
             title: {
                 display: true,
-                text: 'Score Total des joueurs FR du top 10000 Global',
+                text: 'Score Total des joueurs FR du top 10000 Global en Milliards',
                 fontSize: 16
             },
             tooltips: {
@@ -47,7 +47,7 @@ function loadTotalScoreChart() {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Score Total'
+                        labelString: 'Score Total en Milliards'
                     }
                 }]
             }
