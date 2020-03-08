@@ -71,7 +71,7 @@ function getPlayerCount(date) {
 
 function updateGeneralStats() {
     lastUpdateDate = updateDates[updateDates.length - 1];
-    lastWeekUpdateDate = updateDates[Math.min(updateDates.length - 2, 0)];
+    lastWeekUpdateDate = updateDates[Math.max(updateDates.length - 2, 0)];
     lastUpdateTotalScore = Math.round(getTotalScore(lastUpdateDate));
     totalScoreChange = Math.round(getTotalScore(lastUpdateDate)) - Math.round(getTotalScore(lastWeekUpdateDate));
 }
