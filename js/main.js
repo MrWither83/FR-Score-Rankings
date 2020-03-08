@@ -66,6 +66,7 @@ function getPlayerCount(date) {
             count += 1;
         }
     });
+    return count;
 }
 
 function displayGeneralStats() {
