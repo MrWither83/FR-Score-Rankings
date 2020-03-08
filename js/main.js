@@ -48,7 +48,7 @@ function getTotalScore(date) {
             totalScore += row["Score"];
         }
     });
-    return totalScore;
+    return Math.round(totalScore * 100) / 100;
 }
 
 function init() {
