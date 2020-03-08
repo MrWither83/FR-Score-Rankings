@@ -5,6 +5,7 @@ function loadData() {
     Papa.parse(rankingDataUrl, {
         download: true,
         header: true,
+        dynamicTyping: true,
         complete: function(results) {
             rankingData = results;
             init();
