@@ -120,8 +120,8 @@ function updateScoreGainTop() {
 
 function displayScoreGainTop() {
     for (let i = 0; i < 5; i++) {
-        document.getElementById("player" + i.toString()).innerHTML = lastUpdateScoreGainTop[0]["Name"];
-        document.getElementById("playerScore" + i.toString()).innerHTML = lastUpdateScoreGainTop[0]["Score Change"].toString();
+        document.getElementById("player" + i.toString()).innerHTML = lastUpdateScoreGainTop[i]["Name"];
+        document.getElementById("playerScore" + i.toString()).innerHTML = lastUpdateScoreGainTop[i]["Score Change"].toString();
     }
 }
 
