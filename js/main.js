@@ -89,6 +89,7 @@ function getLastUpdateScoreGainTop() {
 
         scoreGainTop.push(lastUpdateData[bestGainIndex])
     }
+    return scoreGainTop;
 }
 
 function loadLastUpdateData() {
