@@ -105,7 +105,6 @@ function updateGeneralStats() {
     lastWeekUpdateDate = updateDates[Math.max(updateDates.length - 2, 0)];
     lastUpdateTotalScore = Math.round(getTotalScore(lastUpdateDate));
     totalScoreChange = Math.round(getTotalScore(lastUpdateDate)) - Math.round(getTotalScore(lastWeekUpdateDate));
-    lastUpdateScoreGainTop = getLastUpdateScoreGainTop()
 }
 
 function displayGeneralStats() {
@@ -113,6 +112,10 @@ function displayGeneralStats() {
     document.getElementById("lastUpdate").innerHTML = lastUpdateDate;
     document.getElementById("totalScore").innerHTML = lastUpdateTotalScore + " Milliards";
     document.getElementById("totalScoreChange").innerHTML = totalScoreChange + " Milliards";
+}
+
+function updateScoreGainTop() {
+    lastUpdateScoreGainTop = getLastUpdateScoreGainTop();
 }
 
 function displayScoreGainTop() {
@@ -132,5 +135,6 @@ function init() {
     displayGeneralStats();
 
     loadLastUpdateData();
+    updateScoreGainTop();
     displayScoreGainTop();
 }
