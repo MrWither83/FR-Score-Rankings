@@ -5,8 +5,11 @@ let updateDates;
 let lastUpdateDate;
 let lastWeekUpdateDate;
 
+let lastUpdateData = [];
+
 let lastUpdateTotalScore;
 let totalScoreChange;
+let lastUpdateScoreGainTop;
 
 
 function loadData() {
@@ -69,11 +72,39 @@ function getPlayerCount(date) {
     return count;
 }
 
+function getLastUpdateScoreGainTop() {
+    let scoreGainTop = [];
+    for (let i = 0; i < 5; i++) {
+        let bestGain = 0;
+        let bestGainIndex = 0;
+
+        let currentIndex = 0;
+        lastUpdateData.forEach(row => {
+            if (row["Score Change"] > bestGain && scoreGainTop.indexOf(row) == -1) {
+                bestGain = row["Score Change"];
+                bestGainIndex = currentIndex;
+            }
+            currentIndex++;
+        });
+
+        scoreGainTop.push(lastUpdateData[bestGainIndex])
+    }
+}
+
+function loadLastUpdateData() {
+    rankingData.data.forEach(row => {
+        if (row["Date"] == lastUpdateDate) {
+            lastUpdateData.push(row);
+        }
+    });
+}
+
 function updateGeneralStats() {
     lastUpdateDate = updateDates[updateDates.length - 1];
     lastWeekUpdateDate = updateDates[Math.max(updateDates.length - 2, 0)];
     lastUpdateTotalScore = Math.round(getTotalScore(lastUpdateDate));
     totalScoreChange = Math.round(getTotalScore(lastUpdateDate)) - Math.round(getTotalScore(lastWeekUpdateDate));
+    lastUpdateScoreGainTop = getLastUpdateScoreGainTop()
 }
 
 function displayGeneralStats() {
@@ -83,12 +114,22 @@ function displayGeneralStats() {
     document.getElementById("totalScoreChange").innerHTML = totalScoreChange + " Milliards";
 }
 
+function displayScoreGainTop() {
+    for (let i = 0; i < 5; i++) {
+        document.getElementById("player" + toString(i)) = lastUpdateScoreGainTop[0]["Name"];
+        document.getElementById("playerScore" + toString(i)) = lastUpdateScoreGainTop[0]["Score Change"];
+    }
+}
+
 function init() {
     console.log(rankingData);
     loadTotalScoreChart();
 
     updateDates = getAllUpdateDates();
+    loadLastUpdateData();
 
     updateGeneralStats();
     displayGeneralStats();
+
+    displayScoreGainTop()
 }
