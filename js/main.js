@@ -117,8 +117,8 @@ function displayGeneralStats() {
 
 function displayScoreGainTop() {
     for (let i = 0; i < 5; i++) {
-        document.getElementById("player" + i.toString()) = lastUpdateScoreGainTop[0]["Name"];
-        document.getElementById("playerScore" + i.toString()) = lastUpdateScoreGainTop[0]["Score Change"];
+        document.getElementById("player" + i.toString()).innerHTML = lastUpdateScoreGainTop[0]["Name"];
+        document.getElementById("playerScore" + i.toString()).innerHTML = lastUpdateScoreGainTop[0]["Score Change"].toString();
     }
 }
 
