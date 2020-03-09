@@ -131,5 +131,5 @@ function init() {
     updateGeneralStats();
     displayGeneralStats();
 
-    displayScoreGainTop()
+    displayScoreGainTop();
 }
