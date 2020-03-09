@@ -127,10 +127,10 @@ function init() {
     loadTotalScoreChart();
 
     updateDates = getAllUpdateDates();
-    loadLastUpdateData();
 
     updateGeneralStats();
     displayGeneralStats();
 
+    loadLastUpdateData();
     displayScoreGainTop();
 }
